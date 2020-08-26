@@ -1,9 +1,11 @@
-package passwordManager;
+package PasswordManagerGUI;
+
 
 import java.math.BigInteger;
 import java.util.Random;
 
 public class Encryption {
+
     /**
      * generates prime larger than given number. It's capable of creating huge numbers due to raising parameter to the power of 15. Thanks to the Big Integer implementation it handels that well.
      *
@@ -22,30 +24,6 @@ public class Encryption {
 
     }
 
-    /**
-     * @param phi
-     * @return random e coprime to phi
-     */
-    static public BigInteger getE(BigInteger phi) //returns random e, 1<e<phi(n)
-    {
-        for (; ; ) {
-            BigInteger e = new BigInteger(phi.bitLength(), new Random());
-            if (e.gcd(phi).intValue() == 1 && phi.compareTo(e) == 1 && phi.compareTo(BigInteger.valueOf(0)) == 1)
-                return e;
-        }
-
-    }
-
-    /**
-     * returns Euler's totient function by calculating (p-1)(q-1)
-     *
-     * @param p
-     * @param q
-     * @return Euler's totient
-     */
-    static public BigInteger getPhi(BigInteger p, BigInteger q) {
-        return (p.subtract(BigInteger.valueOf(1))).multiply(q.subtract(BigInteger.valueOf(1)));
-    }
 
     /**
      * Decrypts a signle sign
@@ -55,7 +33,6 @@ public class Encryption {
      * @param n             part of the RSA
      * @return returns a decrypted single sign due to some length issues
      */
-
     public String decrypt(BigInteger encryptedpswd, BigInteger d, BigInteger n) {
         BigInteger additional;
         BigInteger result;
@@ -99,6 +76,7 @@ public class Encryption {
      * @param phi Euler's totient function
      * @return modular multiplicative inverse
      */
+
     public int modularInverse(int d, int phi) // returns modular inverse
     {
         for (int i = 1; i < phi; i++) {
@@ -106,6 +84,29 @@ public class Encryption {
                 return i;
         }
         return -1;
+    }
+
+
+    static public BigInteger getE(BigInteger phi) //returns random e, 1<e<phi(n)
+    {
+        for (; ; ) {
+            BigInteger e = new BigInteger(phi.bitLength(), new Random());
+            if (e.gcd(phi).intValue() == 1 && phi.compareTo(e) == 1 && phi.compareTo(BigInteger.valueOf(0)) == 1)
+                return e;
+        }
+
+    }
+
+    /**
+     * returns Euler's totient function by calculating (p-1)(q-1)
+     *
+     * @param p
+     * @param q
+     * @return Euler's totient
+     */
+
+    static public BigInteger getPhi(BigInteger p, BigInteger q) {
+        return (p.subtract(BigInteger.valueOf(1))).multiply(q.subtract(BigInteger.valueOf(1)));
     }
 }
 

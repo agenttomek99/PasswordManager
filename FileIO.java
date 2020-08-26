@@ -1,13 +1,13 @@
-package passwordManager;
+package PasswordManagerGUI;
 
 import java.math.BigInteger;
 
-import static passwordManager.Encryption.*;
+import static PasswordManagerGUI.Encryption.*;
 
 public class FileIO {
 
     BigInteger phi;
-    BigInteger result;
+    static BigInteger result;
     BigInteger e;
 
     /**
@@ -17,6 +17,7 @@ public class FileIO {
      * @param login user's login
      * @return n - part of the RSA
      */
+
     public String addUser(String pswd, String login) {
         int add1 = Math.abs(pswd.hashCode());
         int add2 = Math.abs(login.hashCode());

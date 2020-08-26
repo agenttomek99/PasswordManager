@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="421.0" prefWidth="612.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PasswordManagerGUI.LoginScreenController">
+   <children>
+      <ImageView fitHeight="421.0" fitWidth="612.0" pickOnBounds="true">
+         <image>
+            <Image url="@image.jpg" />
+         </image>
+      </ImageView>
+      <MenuBar opacity="0.46" prefHeight="25.0" prefWidth="612.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem fx:id="author" mnemonicParsing="false" onAction="#displayAuthor" text="About the author" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <AnchorPane layoutX="147.0" layoutY="106.0" opacity="0.46" prefHeight="262.0" prefWidth="307.0" style="-fx-background-color: grey;">
+         <children>
+            <PasswordField fx:id="lgn" layoutX="85.0" layoutY="50.0" prefHeight="26.0" prefWidth="191.0" />
+            <PasswordField fx:id="pswd" layoutX="85.0" layoutY="100.0" prefHeight="26.0" prefWidth="191.0" />
+            <PasswordField fx:id="d" layoutX="85.0" layoutY="147.0" prefHeight="26.0" prefWidth="191.0" />
+            <Text layoutX="14.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" />
+            <Text layoutX="14.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+            <Text layoutX="27.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="d" />
+            <Button fx:id="lgnBtn" layoutX="222.0" layoutY="190.0" mnemonicParsing="false" onAction="#login" text="Login" />
+            <Button fx:id="createActBtn" layoutX="85.0" layoutY="190.0" mnemonicParsing="false" onAction="#createAccount" text="Create account" />
+            <Text fx:id="dIsSet" fill="#da0909" layoutX="18.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="281.3332824707031" />
+         </children>
+      </AnchorPane>
+      <Text fx:id="authorMark" fill="WHITE" layoutX="377.0" layoutY="387.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="199.99996948242188" />
+   </children>
+</Pane>
