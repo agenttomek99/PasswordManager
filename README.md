@@ -10,7 +10,7 @@ User has to create two files. They’ll contain public key and passwords. First 
 At the beginning user has to create an account. He has to type both password and login for his vault. The programme will calculate and copy the value of d to the clipboard. The user should store it in a secure place such as for example another password manager or he can encrypt it on his own.
 Now the user can add some passwords to his vault by hitting "Add new account". If he wants to display the vault he should press "Display user's vault" button.
 ### To do list:
- - GUI – URGENT
+ - GUI – URGENT - mostly done
  - Support for multiple users
  - Override hashCode() method
  - Python port
